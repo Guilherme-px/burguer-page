@@ -2,7 +2,7 @@
 
 burger bar template
 
-available for viewing on: 
+available for viewing on: https://guilherme-px.github.io/burg/
 
 ## Project setup
 ```
