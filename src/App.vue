@@ -1,30 +1,56 @@
 <template>
-  <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </div>
-  <router-view/>
+    <div id="app">
+        <Nav />
+        <Content />
+        <Footer />
+    </div>
 </template>
 
+<script>
+import Nav from '@/components/template/Nav'
+import Footer from '@/components/template/Footer'
+import Content from './components/template/Content'
+
+export default {
+    name: 'App',
+    components: { Nav, Footer, Content }
+}
+</script>
+
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
 
-#nav {
-  padding: 30px;
-}
+    h2 {
+        display: flex;
+        justify-content: center;
+        margin: 3rem 0 1.6rem;
+        font-size: 2rem;
+        color: rgb(250, 250, 36);
+        background: #222;
+        border-radius: 20px;
+        padding: 8px 15px;
+    }
 
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
+    .underline {
+        content: '';
+        border: 1px solid rgb(250, 250, 36);
+        width: 8rem;
+        margin-bottom: 5rem;
+    }
 
-#nav a.router-link-exact-active {
-  color: #42b983;
-}
+    #app {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        height: 100vh;
+        display: grid;
+        grid-template-rows: 80px 1fr 1fr;
+        grid-template-areas: 
+            "nav"
+            "content"
+            "footer";
+    }
 </style>
